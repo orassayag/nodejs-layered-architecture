@@ -1,0 +1,6 @@
+.clinic
+node_modules
+.vscode
+.env
+coverage
+.DS_Store
