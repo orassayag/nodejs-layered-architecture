@@ -1,0 +1,40 @@
+{
+  "name": "nodejs-layered-architecture-examples",
+  "version": "1.0.0",
+  "description": "Educational repository showcasing Node.js application architecture patterns and best practices",
+  "author": "Or Assayag <orassayag@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "nodejs",
+    "architecture",
+    "examples",
+    "layered-architecture",
+    "clean-architecture",
+    "patterns",
+    "best-practices",
+    "express",
+    "mongodb",
+    "jwt",
+    "authentication"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orassayag/nodejs-layered-architecture.git"
+  },
+  "bugs": {
+    "url": "https://github.com/orassayag/nodejs-layered-architecture/issues"
+  },
+  "homepage": "https://github.com/orassayag/nodejs-layered-architecture#readme",
+  "scripts": {
+    "install:layered": "cd misc/examples/nodejs-layered-architecture && npm install",
+    "install:jwt": "cd misc/examples/jwt-nodejs-example && npm install",
+    "install:all": "npm run install:layered && npm run install:jwt",
+    "start:layered": "cd misc/examples/nodejs-layered-architecture && npm start",
+    "start:jwt": "cd misc/examples/jwt-nodejs-example && npm start",
+    "test:layered": "cd misc/examples/nodejs-layered-architecture && npm test"
+  },
+  "engines": {
+    "node": ">=12.0.0",
+    "npm": ">=6.0.0"
+  }
+}

@@ -1,4 +1,31 @@
 {
+  "name": "nodejs-layered-architecture",
+  "version": "1.0.0",
+  "description": "A demonstration Node.js application showcasing clean layered architecture pattern with Express.js and MongoDB for building maintainable RESTful APIs",
+  "main": "src/server.js",
+  "author": "Or Assayag <orassayag@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "nodejs",
+    "express",
+    "mongodb",
+    "layered-architecture",
+    "clean-architecture",
+    "rest-api",
+    "separation-of-concerns",
+    "dependency-injection",
+    "mvc",
+    "repository-pattern",
+    "service-layer"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orassayag/nodejs-layered-architecture.git"
+  },
+  "bugs": {
+    "url": "https://github.com/orassayag/nodejs-layered-architecture/issues"
+  },
+  "homepage": "https://github.com/orassayag/nodejs-layered-architecture#readme",
   "scripts": {
     "start": "node src/server.js",
     "start:prod": "node -r dotenv/config src/server.js",

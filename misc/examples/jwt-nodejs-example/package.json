@@ -1,13 +1,29 @@
 {
   "name": "jwt-nodejs-example",
   "version": "1.0.0",
-  "description": "",
+  "description": "A simple demonstration of JWT-based authentication in Node.js with Express, showcasing token generation, validation, and refresh mechanisms",
   "main": "index.js",
+  "author": "Or Assayag <orassayag@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "jwt",
+    "authentication",
+    "nodejs",
+    "express",
+    "jsonwebtoken",
+    "cookies",
+    "security",
+    "auth",
+    "token-based-auth"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/orassayag/nodejs-layered-architecture.git"
+  },
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
     "cookie-parser": "^1.4.4",
