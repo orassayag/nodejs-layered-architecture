@@ -2,7 +2,7 @@
 
 A demonstration Node.js application showcasing a clean, maintainable layered architecture pattern for building RESTful APIs. This project implements a book management system using Express.js and MongoDB, following separation of concerns and dependency injection principles.
 
-Built as an educational example to demonstrate best practices in Node.js application architecture, including proper separation of controllers, services, repositories, and middleware layers.
+Built in September 2021, as an educational example to demonstrate best practices in Node.js application architecture, including proper separation of controllers, services, repositories, and middleware layers.
 
 ## Features
 
@@ -28,19 +28,19 @@ graph TB
     Service[Service Layer]
     Repository[Repository Layer]
     Database[(MongoDB)]
-    
+
     Client -->|HTTP Request| Routes
     Routes -->|Route Matching| Middleware
     Middleware -->|Validation/Auth| Controller
     Controller -->|Business Logic Delegation| Service
     Service -->|Data Operations| Repository
     Repository -->|Queries| Database
-    
+
     Database -->|Data| Repository
     Repository -->|Results| Service
     Service -->|Processed Data| Controller
     Controller -->|HTTP Response| Client
-    
+
     style Client fill:#e1f5ff
     style Routes fill:#fff4e1
     style Middleware fill:#ffe1e1
@@ -61,22 +61,26 @@ graph TB
 ### Installation
 
 1. Clone the repository:
+
 ```bash
 git clone https://github.com/orassayag/nodejs-layered-architecture.git
 cd nodejs-layered-architecture
 ```
 
 2. Install dependencies:
+
 ```bash
 npm install
 ```
 
 3. Ensure MongoDB is running:
+
 ```bash
 mongod
 ```
 
 4. Start the application:
+
 ```bash
 npm start
 ```
@@ -86,6 +90,7 @@ The server will start on port 3001 (or the port specified in your environment).
 ### Configuration
 
 Optional environment variables (create a `.env` file):
+
 ```env
 PORT=3001
 MONGODB_URI=mongodb://localhost:27017/books
@@ -94,18 +99,21 @@ MONGODB_URI=mongodb://localhost:27017/books
 ## Available Scripts
 
 ### Development
+
 ```bash
 npm run watch          # Start with hot reload
 npm run watch:prod     # Start with hot reload and dotenv
 ```
 
 ### Production
+
 ```bash
 npm start              # Start the server
 npm run start:prod     # Start with environment variables
 ```
 
 ### Testing
+
 ```bash
 npm test               # Run all tests
 npm run test:unit      # Run unit tests only
@@ -113,6 +121,7 @@ npm run test:component # Run component/integration tests only
 ```
 
 ### Code Quality
+
 ```bash
 npm run lint           # Check code for linting errors
 ```
@@ -121,20 +130,22 @@ npm run lint           # Check code for linting errors
 
 ### Books Collection
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| GET | `/books` | Get all books |
-| POST | `/books` | Create or update a book |
-| GET | `/books/:isbn` | Get a specific book by ISBN |
+| Method | Endpoint       | Description                 |
+| ------ | -------------- | --------------------------- |
+| GET    | `/books`       | Get all books               |
+| POST   | `/books`       | Create or update a book     |
+| GET    | `/books/:isbn` | Get a specific book by ISBN |
 
 ### Example Requests
 
 **Get all books:**
+
 ```bash
 curl http://localhost:3001/books
 ```
 
 **Create a book:**
+
 ```bash
 curl -X POST http://localhost:3001/books \
   -H "Content-Type: application/json" \
@@ -147,6 +158,7 @@ curl -X POST http://localhost:3001/books \
 ```
 
 **Get a specific book:**
+
 ```bash
 curl http://localhost:3001/books/9780132350884
 ```
@@ -196,6 +208,7 @@ nodejs-layered-architecture/
 ## Layered Architecture Explained
 
 ### 1. Routes Layer
+
 Entry point for HTTP requests. Defines endpoints and maps them to controllers.
 
 ```javascript
@@ -205,15 +218,17 @@ router.get(BOOK, details);
 ```
 
 ### 2. Middleware Layer
+
 Handles cross-cutting concerns: validation, error handling, authentication.
 
 ```javascript
-validateBookMiddleware  // Input validation
-errorMiddleware        // Error handling
-layoutMiddleware       // View layout setup
+validateBookMiddleware; // Input validation
+errorMiddleware; // Error handling
+layoutMiddleware; // View layout setup
 ```
 
 ### 3. Controller Layer
+
 Handles HTTP concerns: request parsing, response formatting, content negotiation.
 
 ```mermaid
@@ -222,7 +237,7 @@ graph LR
     Controller --> Service[Service Layer]
     Service --> Controller
     Controller --> Response[HTTP Response]
-    
+
     style Controller fill:#e1ffe1
 ```
 
@@ -237,6 +252,7 @@ async getList(req, res) {
 ```
 
 ### 4. Service Layer
+
 Contains business logic, independent of HTTP concerns.
 
 ```mermaid
@@ -244,7 +260,7 @@ graph LR
     Controller[Controller] --> Service[Service Layer]
     Service --> Logic[Business Logic]
     Logic --> Repository[Repository]
-    
+
     style Service fill:#f0e1ff
 ```
 
@@ -256,13 +272,14 @@ createOrUpdate({ title, authors, isbn, description }) {
 ```
 
 ### 5. Repository Layer
+
 Abstracts data access, provides a clean interface for database operations.
 
 ```mermaid
 graph LR
     Service[Service] --> Repository[Repository Layer]
     Repository --> Database[(MongoDB)]
-    
+
     style Repository fill:#ffe1f0
 ```
 
@@ -280,6 +297,7 @@ The project includes comprehensive tests:
 - **Component Tests**: Test the full request/response cycle
 
 Run tests with:
+
 ```bash
 npm test
 ```
@@ -287,6 +305,7 @@ npm test
 ## Development
 
 The project uses:
+
 - **Express.js** for web framework
 - **MongoDB** for database
 - **Handlebars** for templating
@@ -306,11 +325,11 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
 ## Author
 
-* **Or Assayag** - *Initial work* - [orassayag](https://github.com/orassayag)
-* Or Assayag <orassayag@gmail.com>
-* GitHub: https://github.com/orassayag
-* StackOverflow: https://stackoverflow.com/users/4442606/or-assayag?tab=profile
-* LinkedIn: https://linkedin.com/in/orassayag
+- **Or Assayag** - _Initial work_ - [orassayag](https://github.com/orassayag)
+- Or Assayag <orassayag@gmail.com>
+- GitHub: https://github.com/orassayag
+- StackOverflow: https://stackoverflow.com/users/4442606/or-assayag?tab=profile
+- LinkedIn: https://linkedin.com/in/orassayag
 
 ## License
 
